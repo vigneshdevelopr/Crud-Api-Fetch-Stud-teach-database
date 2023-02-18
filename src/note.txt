@@ -1,0 +1,13 @@
+@media only screen and (min-width: 688px){
+
+.style{
+  /* backgroundSize: "cover"; */
+  background-size: cover;
+  /* backgroundImage: "url('https://wallpaper.dog/large/20382880.jpg')" */
+  background-image: url("https://wallpaper.dog/large/20382880.jpg");
+  /* height: "max-content", */
+height: max-content;
+  /* backgroundRepeat: "no-repeat", */
+background-repeat: no-repeat;
+}
+}

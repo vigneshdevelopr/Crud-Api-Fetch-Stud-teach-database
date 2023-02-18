@@ -1,38 +1,89 @@
-.App {
+.welcomequote{
+  padding: 70px 0;
   text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btnsec{
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 2px 0px  0px;
+  width: 90px;
+  height:  50px;
+  background-color: azure;
+  font-weight: bold;
 }
+#appbarsec{
+  background-color: rgb(255, 213, 0);
+}
+#studcard{
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(296px, 2rem)); */
+  
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  
+}
+.addstud-sec{
+  
+  border-radius: 8px;
+ width: max-content;
+  margin-top: 70px ;
+  text-align: left;
+ display: flex;
+ flex-direction: column;
+background-color: whitesmoke;  
+color: white
+
+}
+@media only screen and (max-width: 688px){
+
+   .style.bg{
+    /* backgroundSize: "cover"; */
+    background-size: contain;
+    background-color: black;
+    /* backgroundImage: "url('https://wallpaper.dog/large/20382880.jpg')" */
+    /* background-image: url("https://wallpaper.dog/large/20382880.jpg"); */
+    background-image: linear-gradient(to left, #4d2684, #603f91, #efcd87, #e7b03e);
+    height: 100vh;
+
+  
+    /* backgroundRepeat: "no-repeat", */
+  background-repeat: no-repeat;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .addstud-sec{
+    background-color: rgb(255, 255, 255) !important;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: max-content;
+     text-align: left;
+    display: flex;
+    flex-direction: column;
+   color: white
+    
   }
-  to {
-    transform: rotate(360deg);
+  .addstud{
+    margin-top: 70px;
   }
+ #outlined-basic{
+  background-color: yellow;
+  width: max-content;
+ }
+  
+  
+}
+
+@media only screen and (min-width: 688px){
+
+.style{
+  /* backgroundSize: "cover"; */
+  background-size: cover;
+  /* backgroundImage: "url('https://wallpaper.dog/large/20382880.jpg')" */
+  background-image: url("https://wallpaper.dog/large/20382880.jpg");
+  /* height: "max-content", */
+height: max-content;
+  /* backgroundRepeat: "no-repeat", */
+background-repeat: no-repeat;
+}
 }
