@@ -1,39 +1,34 @@
-import React, { useEffect, useState } from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { useHistory } from "react-router-dom";
-import Base from "../Base/Base";
-import { Container, Grid } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import React from 'react'
+import Base from '../Base/Base';
 
-function StudData({studentdata, setStudentdata}) {
-  // const [user, setUser] = useState([]);
-  const style = {
+const TeachData = ({teacherdata, setTeacherdata}) => {
+
+const style = {
     marginTop:'-1rem',
     backgroundSize: "cover",
     backgroundImage:
-      "url('https://coolbackgrounds.io/images/backgrounds/white/white-canyon-6c5d2a4c.jpg')",
+      "url('https://www.allisonacademy.com/wp-content/uploads/2021/12/Teacher-in-the-classroom.jpg')",
     // height:"100vh",
     backgroundRepeat: "no-repeat",
   };
 
- //Delete the Data from the source
+//Delete 
 
- const deleteStudentData = async (studID) =>{
-  try {
-    const response = await fetch(`https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/studentdata/${studID}`, {
-      method :"DELETE", 
-    }); 
-    const data = await response.json()
-   console.log(data);
- const selectedStudents = studentdata.filter((stud)=> stud.id !== studID);
- setStudentdata(selectedStudents); 
-  } catch (error) {
-    console.log("error occured")
-  }
+const DeleteData = async(teachId)=>{
+try{
+const response = await fetch(`https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/teacherdata/${teachId}`
+,{
+    method: "DELETE",
+});
+const data = await response.json();
+console.log(data);
+
+const deleteselect = teacherdata.filter((teacher)=>teacher.id !== teachId)
+setTeacherdata(deleteselect);
+}catch(error){
+console.error(error);
+}
 }
 
 
@@ -42,7 +37,7 @@ function StudData({studentdata, setStudentdata}) {
     <Base>
       <div style={style} id="studcard">
           <Grid id="addstud-grid"  style={{ margin: "0px" }}>
-            {studentdata?.map((datas, id) => (
+            {teacherdata?.map((datas, id) => (
               <Card
                 sx={{ backgroundColor:'#252525',color:'whitesmoke', maxWidth: 200, minHeight:200,  borderRadius: "15px" }} key={datas.id}
               >
@@ -55,9 +50,7 @@ function StudData({studentdata, setStudentdata}) {
                   <Typography  gutterBottom variant="h5" component="div">
                     {datas.name}
                   </Typography>
-                  <Typography variant="body2" color="#fff">
-                   <span style={{fontWeight:'bold', color:'yellow'}}> Batch: </span> {datas.batch}
-                  </Typography>
+                 
                   <Typography variant="body2" color="#fff">
                   <span style={{fontWeight:'bold', color:'yellow'}}> Age:</span> {datas.age}
                   </Typography>
@@ -70,14 +63,14 @@ function StudData({studentdata, setStudentdata}) {
                 </CardContent>
                 <CardActions>
                   <Button size="small" variant="contained">Edit  </Button>
-                  <Button size="small" variant="contained" onClick={()=>deleteStudentData(datas.id)} style={{marginLeft:'1cm', backgroundColor:'red'}}>Delete</Button>
+                  <Button size="small" onClick={()=>DeleteData(datas.id)} variant="contained"  style={{marginLeft:'1cm', backgroundColor:'red'}}>Delete</Button>
                 </CardActions>
               </Card>
             ))}
           </Grid>
       </div>
     </Base>
-  );
+  )
 }
 
-export default StudData;
+export default TeachData

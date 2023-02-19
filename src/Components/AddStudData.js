@@ -84,8 +84,7 @@ const data = await response.json();
   return (
     <Base>
       {/* <div style={style}> */}
-      <div className="style">
-        <div className="addstud">
+      <div className="addstud" id="style">
           <Box
             className="addstud-sec"
             component="form"
@@ -164,7 +163,6 @@ const data = await response.json();
             </Button>
           </Box>
         </div>
-      </div>
     </Base>
   );
 }

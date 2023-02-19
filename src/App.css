@@ -3,6 +3,12 @@
   text-align: center;
 
 }
+#addstud-grid{
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
 
 .btnsec{
   display: block;
@@ -17,6 +23,9 @@
 #appbarsec{
   background-color: rgb(255, 213, 0);
 }
+#appbar-box{
+  max-height: fit-content;
+}
 #studcard{
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(296px, 2rem)); */
@@ -28,7 +37,6 @@
   
   border-radius: 8px;
  width: max-content;
-  margin-top: 70px ;
   text-align: left;
  display: flex;
  flex-direction: column;
@@ -38,7 +46,7 @@ color: white
 }
 @media only screen and (max-width: 688px){
 
-   .style.bg{
+   #style.bg{
     /* backgroundSize: "cover"; */
     background-size: contain;
     background-color: black;
@@ -63,9 +71,7 @@ color: white
    color: white
     
   }
-  .addstud{
-    margin-top: 70px;
-  }
+
  #outlined-basic{
   background-color: yellow;
   width: max-content;
@@ -76,11 +82,12 @@ color: white
 
 @media only screen and (min-width: 688px){
 
-.style{
+#style{
   /* backgroundSize: "cover"; */
+  margin-top:-1rem;
   background-size: cover;
   /* backgroundImage: "url('https://wallpaper.dog/large/20382880.jpg')" */
-  background-image: url("https://wallpaper.dog/large/20382880.jpg");
+  background-image: url("https://www.allisonacademy.com/wp-content/uploads/2021/12/Teacher-in-the-classroom.jpg");
   /* height: "max-content", */
 height: max-content;
   /* backgroundRepeat: "no-repeat", */
