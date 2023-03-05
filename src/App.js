@@ -20,7 +20,7 @@ function App() {
 
 const FetchStudData = async () =>{
   try{
-    const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/studentdata",{
+    const response = await fetch("https://backend-api-iota.vercel.app/all/students",{
       method: 'GET'
     })
     const data = await response.json();
