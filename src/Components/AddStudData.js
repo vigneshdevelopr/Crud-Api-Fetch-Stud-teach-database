@@ -49,13 +49,14 @@ try {
     experience,
   }
 const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/studentdata/",
+// const response = await fetch("http://localhost:9000/all/students",
   {
     method: "POST",
     body: JSON.stringify(newData),
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
 
 const data = await response.json();
   

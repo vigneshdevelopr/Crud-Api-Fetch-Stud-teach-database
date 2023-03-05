@@ -14,13 +14,14 @@ function App() {
   const[studentdata, setStudentdata]= useState([])
   const[teacherdata, setTeacherdata]= useState([])
   // console.log(studentdata);
-
+//Api
   //student fetch
   useEffect(()=>{
 
 const FetchStudData = async () =>{
   try{
-    const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/studentdata",{
+    // const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/studentdata",{
+    const response = await fetch("http://localhost:9000/all/students",{
       method: 'GET'
     })
     const data = await response.json();
@@ -39,12 +40,13 @@ FetchStudData();
 useEffect(()=>{
   const FetchTeachData = async()=>{
   try{
-const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/teacherdata",{
+// const response = await fetch("https://63eaea25bfdd4299673ec988.mockapi.io/studentdata/teacherdata",{
+const response = await fetch("http://localhost:9000/all/students",{
 
 method: "GET",
 })
 const data = await response.json();
-setTeacherdata(data);
+setTeacherdata(data.data);
 console.log(data);
   }catch(error){
 console.log(error.message);
